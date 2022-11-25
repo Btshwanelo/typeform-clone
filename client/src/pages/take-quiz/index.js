@@ -1,8 +1,9 @@
 import React from 'react';
+import QuizComponent from '../../components/quiz-component';
 import './style.css';
 
-const FillForm = () => {
-  return <div>fill form</div>;
+const Quiz = () => {
+  return <div><QuizComponent /> </div>;
 };
 
-export default FillForm;
+export default Quiz;

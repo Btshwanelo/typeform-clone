@@ -1,5 +1,5 @@
 import AddQuestion from './pages/add-question';
-import FillForm from './pages/take-quiz';
+import Quiz from './pages/take-quiz';
 import Home from './pages/home';
 import { Routes, Route } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ function App() {
         />
         <Route
           path='/quiz'
-          element={<FillForm />}
+          element={<Quiz />}
         />
       </Routes>
     </div>
