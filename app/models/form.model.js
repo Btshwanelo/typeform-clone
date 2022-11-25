@@ -1,9 +1,12 @@
 module.exports = mongoose => {
   var schema = mongoose.Schema(
     {
-      question: String,
-      questionOptions: Array,
-      correctIndex: String,
+      questionText: String,
+      answer1: String,
+      answer2: String,
+      answer3: String,
+      answer4: String,
+      correctAnswer: String,
     },
     { timestamps: true },
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const Home = () => {
@@ -10,8 +11,8 @@ const Home = () => {
         middle.
       </h2>
       <div>
-        <button>Let's get Started</button>
-        <button>Add new question to quiz</button>
+        <Link to='quiz'>Take a quiz</Link>
+        <Link to='add'>Add aquestion</Link>
       </div>
     </div>
   );
