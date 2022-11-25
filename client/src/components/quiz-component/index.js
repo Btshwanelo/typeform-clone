@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BadgeComponent from '../badge-component';
+import EndQuiz from '../end-quiz';
 import './style.css';
 
 const QuizComponent = () => {
@@ -77,52 +78,77 @@ const QuizComponent = () => {
 
   return (
     <>
-      {showBadge && (
-        <BadgeComponent />
-      )}
-      {completed && (
-        <div>
-          <h1>You have finshed Congretulations</h1>
-        </div>
-      )}
+      {showBadge && <BadgeComponent handleNextQuestion={handleNextQuestion} />}
+      {completed && <EndQuiz />}
       {!showBadge && !completed && (
-        <div>
-          <div>{questions[currentQuestion].questionText}</div>
-          <div>
-            <p>{questions[currentQuestion].answer1}</p>
-            <p>{questions[currentQuestion].answer2}</p>
-            <p>{questions[currentQuestion].answer3}</p>
-            <p>{questions[currentQuestion].answer4}</p>
-            <input
-              type='radio'
-              name='answer1'
-              value={questions[currentQuestion].answer1}
-              checked={isRdioSelected(questions[currentQuestion].answer1)}
-              onChange={handleRadioClick}
-            />
-            <input
-              type='radio'
-              name='answer2'
-              value={questions[currentQuestion].answer2}
-              checked={isRdioSelected(questions[currentQuestion].answer2)}
-              onChange={handleRadioClick}
-            />
-            <input
-              type='radio'
-              name='answer3'
-              value={questions[currentQuestion].answer3}
-              checked={isRdioSelected(questions[currentQuestion].answer3)}
-              onChange={handleRadioClick}
-            />
-            <input
-              type='radio'
-              name='answer4'
-              value={questions[currentQuestion].answer4}
-              checked={isRdioSelected(questions[currentQuestion].answer4)}
-              onChange={handleRadioClick}
-            />
+        <div className='quiz-container slide-in-bottom'>
+          <div className='quiz-wrapper'>
+            <h2>{questions[currentQuestion].questionText}</h2>
+            <div className='question-wrapper'>
+              <p>
+                <span>1 : </span> {questions[currentQuestion].answer1}
+              </p>
+              <p>
+                <span>2 : </span>
+                {questions[currentQuestion].answer2}
+              </p>
+              <p>
+                <span>3 : </span>
+                {questions[currentQuestion].answer3}
+              </p>
+              <p>
+                <span>4 : </span>
+                {questions[currentQuestion].answer4}
+              </p>
+            </div>
+            <div className='radio-wrapper'>
+              <div className='input-container'>
+                <label>1</label>
+                <input
+                  type='radio'
+                  className='checkmark'
+                  name='answer1'
+                  value={questions[currentQuestion].answer1}
+                  checked={isRdioSelected(questions[currentQuestion].answer1)}
+                  onChange={handleRadioClick}
+                />
+              </div>
+              <div className='input-container'>
+                <label>2</label>
+                <input
+                  type='radio'
+                  name='answer2'
+                  className='checkmark'
+                  value={questions[currentQuestion].answer2}
+                  checked={isRdioSelected(questions[currentQuestion].answer2)}
+                  onChange={handleRadioClick}
+                />
+              </div>
+              <div className='input-container'>
+                <label>3</label>
+                <input
+                  type='radio'
+                  name='answer3'
+                  className='checkmark'
+                  value={questions[currentQuestion].answer3}
+                  checked={isRdioSelected(questions[currentQuestion].answer3)}
+                  onChange={handleRadioClick}
+                />
+              </div>
+              <div className='input-container'>
+                <label>4</label>
+                <input
+                  type='radio'
+                  name='answer4'
+                  className='checkmark'
+                  value={questions[currentQuestion].answer4}
+                  checked={isRdioSelected(questions[currentQuestion].answer4)}
+                  onChange={handleRadioClick}
+                />
+              </div>
+            </div>
+            <button onClick={() => handleAnswerOptionClick(answer)}>Ok</button>
           </div>
-          <button onClick={() => handleAnswerOptionClick(answer)}>Ok</button>
         </div>
       )}
     </>

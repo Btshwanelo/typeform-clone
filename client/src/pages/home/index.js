@@ -11,8 +11,8 @@ const Home = () => {
         middle.
       </h2>
       <div>
-        <Link to='quiz'>Take a quiz</Link>
-        <Link to='add'>Add aquestion</Link>
+        <Link to='/quiz'>Take a quiz</Link>
+        <Link to='/add'>Add aquestion</Link>
       </div>
     </div>
   );

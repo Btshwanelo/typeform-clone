@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const BadgeComponent = () => {
+const BadgeComponent = ({ handleNextQuestion }) => {
   return (
     <div className='container'>
       <h2>Congratulations you have unlocked a badge</h2>
@@ -11,7 +11,7 @@ const BadgeComponent = () => {
         width='150px'
         height='150px'
       />
-      <button>Next</button>
+      <button onClick={() => handleNextQuestion()}>Next</button>
     </div>
   );
 };
