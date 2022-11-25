@@ -1,9 +1,9 @@
-module.exports = (mongoose) => {
+module.exports = mongoose => {
   var schema = mongoose.Schema(
     {
-      title: String,
-      description: String,
-      published: Boolean,
+      question: String,
+      questionOptions: Array,
+      correctIndex: String,
     },
     { timestamps: true },
   );
