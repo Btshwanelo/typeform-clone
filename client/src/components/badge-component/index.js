@@ -3,14 +3,15 @@ import './style.css';
 
 const BadgeComponent = () => {
   return (
-    <div>
+    <div className='container'>
       <h2>Congratulations you have unlocked a badge</h2>
-      <div>
-        <div>Badge Image</div>
-      </div>
-      <div>
-        <button>Next</button>
-      </div>
+      <img
+        src='/golden-badge.png'
+        alt='badge-image'
+        width='150px'
+        height='150px'
+      />
+      <button>Next</button>
     </div>
   );
 };

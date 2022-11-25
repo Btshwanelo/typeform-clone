@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BadgeComponent from '../badge-component';
 import './style.css';
 
 const QuizComponent = () => {
@@ -59,6 +60,7 @@ const QuizComponent = () => {
   const handleAnswerOptionClick = answer => {
     if (answer === questions[currentQuestion].correctAnswer) {
       setShowBadge(true);
+      return;
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -76,12 +78,7 @@ const QuizComponent = () => {
   return (
     <>
       {showBadge && (
-        <div>
-          <h1>
-            <strong>Congretulations, you have unlocked a new Badge</strong>
-          </h1>
-          <button onClick={handleNextQuestion}>Next</button>
-        </div>
+        <BadgeComponent />
       )}
       {completed && (
         <div>
