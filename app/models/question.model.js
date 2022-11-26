@@ -17,6 +17,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Form = mongoose.model('form', schema);
-  return Form;
+  const Question = mongoose.model('question', schema);
+  return Question;
 };

@@ -13,7 +13,7 @@ db.mongoose
   .then(() => {
     console.log('Connected to the database!');
   })
-  .catch((err) => {
+  .catch(err => {
     console.log('Cannot connect to the database!', err);
     process.exit();
   });
@@ -30,7 +30,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-require('./app/routes/form.routes')(app);
+require('./app/routes/question.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

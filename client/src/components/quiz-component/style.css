@@ -27,16 +27,22 @@
   margin-top: 20px;
   width: fit-content;
 }
+.question-wrapper {
+  padding-left: 15px;
+}
 
 p {
   font-size: large;
   font-weight: 700;
 }
 
-
+p span {
+  color: rgb(75, 185, 183);
+}
 
 .radio-wrapper {
   display: flex;
+  flex-direction: row;
 }
 
 .input-container {

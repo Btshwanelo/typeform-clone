@@ -56,10 +56,10 @@ const QuestionForm = ({ addQuestion }) => {
     },
   });
   return (
-    <>
+    <div className='form-container'>
       <form onSubmit={formik.handleSubmit}>
-        <div>
-          <h1>Add a question to the quiz</h1>
+        <div >
+          <h2>Add a question.</h2>
           {formik.errors.questionText && formik.touched.questionText && (
             <div id='feedback'>{formik.errors.questionText}</div>
           )}
@@ -76,7 +76,7 @@ const QuestionForm = ({ addQuestion }) => {
           </div>
         </div>
         <div>
-          <h1>Answers options</h1>
+          <h2>Answers options</h2>
           {formik.errors.answer1 && formik.touched.answer1 && (
             <div id='feedback'>{formik.errors.answer1}</div>
           )}
@@ -141,12 +141,12 @@ const QuestionForm = ({ addQuestion }) => {
             />
           </div>
         </div>
-        <div>
-          <h1>Custom Radio Buttons</h1>
+        <h2>Correct answer</h2>
+        <div className='answr-containter'>
           {formik.errors.correctAnswer && formik.touched.correctAnswer && (
             <div id='feedback'>{formik.errors.correctAnswer}</div>
           )}
-          <label className='container'>
+          <label className=''>
             A
             <input
               type='radio'
@@ -156,7 +156,7 @@ const QuestionForm = ({ addQuestion }) => {
             />
             <span className='checkmark'></span>
           </label>
-          <label className='container'>
+          <label className=''>
             B
             <input
               type='radio'
@@ -166,7 +166,7 @@ const QuestionForm = ({ addQuestion }) => {
             />
             <span className='checkmark'></span>
           </label>
-          <label className='container'>
+          <label className=''>
             C
             <input
               type='radio'
@@ -176,7 +176,7 @@ const QuestionForm = ({ addQuestion }) => {
             />
             <span className='checkmark'></span>
           </label>
-          <label className='container'>
+          <label className=''>
             D
             <input
               type='radio'
@@ -189,7 +189,7 @@ const QuestionForm = ({ addQuestion }) => {
         </div>
         <button type='submit'>Submit</button>
       </form>
-    </>
+    </div>
   );
 };
 

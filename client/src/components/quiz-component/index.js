@@ -27,7 +27,7 @@ const QuizComponent = () => {
       answer2: 'Intel',
       answer3: 'Amazon',
       answer4: 'Microsoft',
-      correctAnswer: 'Intel',
+      correctAnswer: 'Apple',
     },
     {
       questionText: 'How many Harry Potter books are there?',
@@ -86,18 +86,18 @@ const QuizComponent = () => {
             <h2>{questions[currentQuestion].questionText}</h2>
             <div className='question-wrapper'>
               <p>
-                <span>1 : </span> {questions[currentQuestion].answer1}
+                <span>1 -&gt; </span> {questions[currentQuestion].answer1}
               </p>
               <p>
-                <span>2 : </span>
+                <span>2 -&gt; </span>
                 {questions[currentQuestion].answer2}
               </p>
               <p>
-                <span>3 : </span>
+                <span>3 -&gt; </span>
                 {questions[currentQuestion].answer3}
               </p>
               <p>
-                <span>4 : </span>
+                <span>4 -&gt; </span>
                 {questions[currentQuestion].answer4}
               </p>
             </div>
@@ -147,7 +147,11 @@ const QuizComponent = () => {
                 />
               </div>
             </div>
-            <button onClick={() => handleAnswerOptionClick(answer)}>Ok</button>
+            {answer && (
+              <button onClick={() => handleAnswerOptionClick(answer)}>
+                Ok
+              </button>
+            )}
           </div>
         </div>
       )}
