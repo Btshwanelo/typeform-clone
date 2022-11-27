@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 
-const db = require('./app/models');
+const db = require('./backend/models');
 
 db.mongoose
   .connect(db.url, {
@@ -30,7 +30,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-require('./app/routes/question.routes')(app);
+require('./backend/routes/question.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

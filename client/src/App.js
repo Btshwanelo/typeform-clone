@@ -1,7 +1,8 @@
+import React from 'react';
 import AddQuestion from './pages/add-question';
-import Quiz from './pages/take-quiz';
 import Home from './pages/home';
 import { Routes, Route } from 'react-router-dom';
+import TakeQuiz from './pages/take-quiz';
 
 function App() {
   return (
@@ -9,15 +10,18 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<Home />}
+          element={
+            <Home
+            />
+          }
         />
         <Route
-          path='/add'
+          path='/add-question'
           element={<AddQuestion />}
         />
         <Route
-          path='/quiz'
-          element={<Quiz />}
+          path='/take-quiz'
+          element={<TakeQuiz />}
         />
       </Routes>
     </div>

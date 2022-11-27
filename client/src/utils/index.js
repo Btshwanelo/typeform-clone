@@ -1,7 +1,13 @@
 export const countDownTimer = () => {
-  const startingMinutes = 60;
-  let time = startingMinutes * 60;
-  let timer = '';
+  const startingMinutes = 3;
+
+  const startingSeconds = startingMinutes * 60;
+  const minutes = String(startingSeconds).split('.')[0];
+  const seconds = String(startingSeconds).split('.')[1].slice(0, 2);
+
+  setInterval(() => {
+    
+  })
 
   // setInterval(updateCountDown, 1000);
 

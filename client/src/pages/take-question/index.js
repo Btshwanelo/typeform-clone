@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import './style.css';
 import EndQuiz from '../../components/quiz-end-component';
 import BadgeComponent from '../../components/badge-component';
+import './style.css';
 import QuizComponent from '../../components/question-component';
 
 const TakeQuiz = () => {
@@ -90,6 +89,7 @@ const TakeQuiz = () => {
       setCompleted(true);
     }
   };
+
   return (
     <>
       {showBadge && <BadgeComponent handleNextQuestion={handleNextQuestion} />}
@@ -102,7 +102,6 @@ const TakeQuiz = () => {
           answer={answer}
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRadioClick={handleRadioClick}
-          handleNextQuestion={handleAnswerOptionClick}
         />
       )}
     </>
