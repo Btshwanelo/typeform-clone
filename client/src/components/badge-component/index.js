@@ -10,7 +10,7 @@ const BadgeComponent = props => {
       <h2>{congretsText || 'Congratulations you have unlocked a badge'}</h2>
       <img
         src='/golden-badge.png'
-        alt='badge-image'
+        alt='badge'
         width='150px'
         height='150px'
       />

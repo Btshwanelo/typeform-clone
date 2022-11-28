@@ -17,11 +17,15 @@ const TakeQuiz = () => {
 
   const { data: questions, isFetching, error } = useGetQuestionsQuery();
 
+
+  // handle radio button selection 
   const handleRadioClick = value => {
     setAnswer(value);
     setSelectedRadio(value);
   };
 
+
+  // handle next question
   const handleNextQuestion = () => {
     if (currentQuestion + 1 >= questions.length) {
       setCompleted(true);
@@ -31,6 +35,7 @@ const TakeQuiz = () => {
     setShowBadge(false);
   };
 
+  // handle answer
   const handleAnswerOptionClick = answer => {
     if (answer === questions[currentQuestion].correctAnswer) {
       setShowBadge(true);
@@ -49,10 +54,14 @@ const TakeQuiz = () => {
     }
   };
 
+  // if loading questions
   if (isFetching) return <Loader />;
 
+  // if error
   if (error) return <Error />;
 
+  // if there are no questions
+  if (questions?.length[0]) return <Loader />;
   return (
     <>
       {showBadge && <BadgeComponent handleNextQuestion={handleNextQuestion} />}

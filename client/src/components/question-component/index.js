@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { countDownTimer } from '../../utils';
 
 import './style.css';
 
@@ -20,17 +19,27 @@ const QuizComponent = props => {
   const [seconds, setSeconds] = useState(startingSeconds);
   const [minutes, setMinutes] = useState(startingMinutes);
   const timer = useRef();
+  
   useEffect(() => {
-    countDownTimer(
-      startingSeconds,
-      startingMinutes,
-      timer,
-      seconds,
-      minutes,
-      setSeconds,
-      setMinutes,
-      handleNextQuestion,
-    );
+    timer.current = setInterval(() => {
+      setSeconds(seconds - 1);
+      if (minutes === 0 && seconds === 0) {
+        setSeconds(startingSeconds);
+        setMinutes(startingMinutes);
+        handleNextQuestion();
+      }
+
+      if (minutes > 0 && seconds === 0) {
+        setMinutes(minutes - 1);
+        setSeconds(59);
+      }
+
+      if (minutes === 0 && seconds === 1) {
+        setMinutes(0);
+        setSeconds(0);
+      }
+    }, 1000);
+    return () => clearInterval(timer.current);
   });
 
   return (

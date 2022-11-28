@@ -28,42 +28,7 @@ hr {
   width: 50%;
 }
 
-.error {
-  color: rgb(247, 10, 10);
-  font-size: larger;
-  font-weight: 500;
 
-}
-
-.form-input-container {
-  
-  margin: 18px 0;
-}
-
-.form-input-container input {
-    font-family: inherit;
-    color: rgb(19, 124, 117);
-    padding: 0px 0px 8px;
-    border: none;
-    outline: none;
-    border-radius: 0px;
-    appearance: none;
-    background-image: none;
-    background-position: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    transform: translateZ(0px);
-    font-size: 24px;
-    -webkit-font-smoothing: antialiased;
-    line-height: unset;
-    -webkit-text-fill-color: rgba(19, 124, 117, 0.3);
-    box-shadow: rgb(19 124 117 / 30%) 0px 1px;
-    background-color: transparent !important;
-    height: 30px;
-}
 
 
  .answr-containter {
@@ -71,8 +36,3 @@ hr {
   flex-direction: row;
  }
 
- .answr-containter .answer-radio {
-    border: 1px solid;
-    padding: 15px;
-    font-weight: 500;
-  }

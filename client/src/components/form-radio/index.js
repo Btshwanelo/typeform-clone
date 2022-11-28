@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 const FomrRadio = props => {
   const { type, name, value, onChange, descp } = props;
   return (

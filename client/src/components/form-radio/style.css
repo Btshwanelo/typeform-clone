@@ -1,0 +1,12 @@
+.answer-radio {
+  border: 1px solid;
+  padding: 15px;
+  font-weight: 500;
+}
+
+.checkmark {
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+}

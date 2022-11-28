@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 
 import './style.css';
 
-const Home = () => {
+const Home = ({ welcomeText, descriptionText, firstBtn, secondBtn }) => {
   return (
     <div className='home-container'>
-      <h2>
-        If you get a high score, you probably spend way too much time on
-        Wikipedia.
-      </h2>
+      <h2>{welcomeText || 'Take a Trivia Quiz and see how good you are.'}</h2>
       <h3>
-        There are 12 questions and a break for refreshments in the middle.
+        {descriptionText || 'If you get a question correct, you unlock a badge.'}
       </h3>
       <div className='btn-group'>
-        <Link to='/take-quiz'>Take a quiz</Link>
-        <Link to='/add-question'>Add aquestion</Link>
+        <Link to='/take-quiz'>{firstBtn || 'Take a quiz'}</Link>
+        <Link to='/add-question'>{secondBtn || 'Add aquestion'}</Link>
       </div>
     </div>
   );
