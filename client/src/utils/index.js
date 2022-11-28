@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export const countDownTimer = (
   startingSeconds,
   startingMinutes,
