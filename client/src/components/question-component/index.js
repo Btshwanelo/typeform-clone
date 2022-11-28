@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { countDownTimer } from '../../utils';
 
 import './style.css';
 
@@ -21,7 +22,6 @@ const QuizComponent = props => {
   const timer = useRef();
   useEffect(() => {
 <<<<<<< HEAD
-<<<<<<< HEAD
     timer.current = setInterval(() => {
       setSeconds(seconds - 1);
       if (minutes === 0 && seconds === 0) {
@@ -30,32 +30,17 @@ const QuizComponent = props => {
         handleNextQuestion();
       }
   
-=======
-    timer.current = setInterval(() => {
-      setSeconds(seconds - 1);
-      if (minutes === 0 && seconds === 0) {
-        setSeconds(startingMinutes);
-        setMinutes(startingMinutes);
-        handleNextQuestion();
-      }
-
->>>>>>> parent of 9989181 (added loader and error component)
       if (minutes > 0 && seconds === 0) {
         setMinutes(minutes - 1);
         setSeconds(59);
       }
-<<<<<<< HEAD
   
-=======
-
->>>>>>> parent of 9989181 (added loader and error component)
       if (minutes === 0 && seconds === 1) {
         setMinutes(0);
         setSeconds(0);
       }
     }, 1000);
     return () => clearInterval(timer.current);
-<<<<<<< HEAD
   }, []);
 =======
     countDownTimer(
@@ -68,8 +53,6 @@ const QuizComponent = props => {
       setMinutes,
       handleNextQuestion,
     );
-=======
->>>>>>> parent of 9989181 (added loader and error component)
   });
 >>>>>>> parent of ab5ef1b (updated readme file)
 
@@ -83,7 +66,7 @@ const QuizComponent = props => {
         <div className='question-wrapper'>
           {questions[currentQuestion].options.map((option, i) => (
             <div
-              key={i}
+              key={option._id}
               className={`btn-answer ${
                 selectedRadio === option.answer && 'btn-answer-active'
               }`}
