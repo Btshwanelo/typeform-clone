@@ -28,10 +28,7 @@ hr {
   width: 50%;
 }
 
-
-
-
- .answr-containter {
+.answr-containter {
   display: flex;
   flex-direction: row;
  }

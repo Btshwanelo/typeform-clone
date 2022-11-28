@@ -7,6 +7,7 @@ import { validateForm, submitForm } from '../../utils/form-utils';
 import FormInput from '../../components/form-input';
 import FomrRadio from '../../components/form-radio';
 import { useAddQuestionMutation } from '../../redux/services/quizCore';
+import AppStatus from '../../components/app-status';
 
 const AddQuestion = () => {
   const navigate = useNavigate();
@@ -26,12 +27,8 @@ const AddQuestion = () => {
     onSubmit: values => submitForm(values, navigate, addQuestion, setSubmitted),
   });
 
-  if (submitted)
-    return (
-      <div>
-        <h2>Submitted...</h2>
-      </div>
-    );
+  if (submitted) return <AppStatus statusMessage={'Successfully submitted'} />;
+
   return (
     <div className='form-container'>
       <form onSubmit={formik.handleSubmit}>

@@ -12,7 +12,7 @@ const Home = ({ welcomeText, descriptionText, firstBtn, secondBtn }) => {
       </h3>
       <div className='btn-group'>
         <Link to='/take-quiz'>{firstBtn || 'Take a quiz'}</Link>
-        <Link to='/add-question'>{secondBtn || 'Add aquestion'}</Link>
+        <Link to='/add-question'>{secondBtn || 'Add a question'}</Link>
       </div>
     </div>
   );
