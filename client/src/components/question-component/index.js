@@ -22,6 +22,7 @@ const QuizComponent = props => {
   useEffect(() => {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     timer.current = setInterval(() => {
       setSeconds(seconds - 1);
       if (minutes === 0 && seconds === 0) {
@@ -31,6 +32,8 @@ const QuizComponent = props => {
       }
   
 =======
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
     timer.current = setInterval(() => {
       setSeconds(seconds - 1);
       if (minutes === 0 && seconds === 0) {
@@ -39,13 +42,20 @@ const QuizComponent = props => {
         handleNextQuestion();
       }
 
+<<<<<<< HEAD
+>>>>>>> parent of 9989181 (added loader and error component)
+=======
 >>>>>>> parent of 9989181 (added loader and error component)
       if (minutes > 0 && seconds === 0) {
         setMinutes(minutes - 1);
         setSeconds(59);
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> parent of 9989181 (added loader and error component)
 =======
 
 >>>>>>> parent of 9989181 (added loader and error component)
@@ -55,6 +65,7 @@ const QuizComponent = props => {
       }
     }, 1000);
     return () => clearInterval(timer.current);
+<<<<<<< HEAD
 <<<<<<< HEAD
   }, []);
 =======
@@ -68,6 +79,8 @@ const QuizComponent = props => {
       setMinutes,
       handleNextQuestion,
     );
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
 =======
 >>>>>>> parent of 9989181 (added loader and error component)
   });
