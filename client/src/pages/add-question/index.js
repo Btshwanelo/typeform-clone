@@ -22,7 +22,6 @@ const AddQuestion = () => {
       correctAnswer: '',
     },
 <<<<<<< HEAD
-<<<<<<< HEAD
     validate: (values) => validateForm(values),
     onSubmit: (values) => submitForm(values, navigate, addQuestion, setSubmitted),
   });
@@ -35,11 +34,6 @@ const AddQuestion = () => {
     );
   }
 
-=======
-    validate: values => validateForm(values),
-    onSubmit: values => submitForm(values, navigate, addQuestion),
-  });
->>>>>>> parent of 9989181 (added loader and error component)
 =======
     validate: values => validateForm(values),
     onSubmit: values => submitForm(values, navigate, addQuestion),
