@@ -1,32 +1,22 @@
-import { useState } from 'react';
+export const countDownTimer = () => {
+  const startingMinutes = 3;
 
-export const countDownTimer = (
-  startingSeconds,
-  startingMinutes,
-  timer,
-  seconds,
-  minutes,
-  setSeconds,
-  setMinutes,
-  handleNextQuestion,
-) => {
-  timer.current = setInterval(() => {
-    setSeconds(seconds - 1);
-    if (minutes === 0 && seconds === 0) {
-      setSeconds(startingSeconds);
-      setMinutes(startingMinutes);
-      handleNextQuestion();
-    }
+  const startingSeconds = startingMinutes * 60;
+  const minutes = String(startingSeconds).split('.')[0];
+  const seconds = String(startingSeconds).split('.')[1].slice(0, 2);
 
-    if (minutes > 0 && seconds === 0) {
-      setMinutes(minutes - 1);
-      setSeconds(59);
-    }
+  setInterval(() => {
+    
+  })
 
-    if (minutes === 0 && seconds === 1) {
-      setMinutes(0);
-      setSeconds(0);
-    }
-  }, 1000);
-  return () => clearInterval(timer.current);
+  // setInterval(updateCountDown, 1000);
+
+  function updateCountDown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    timer = `${minutes}: ${seconds}`;
+    time--;
+  }
 };

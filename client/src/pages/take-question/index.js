@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import './style.css';
 import EndQuiz from '../../components/quiz-end-component';
 import BadgeComponent from '../../components/badge-component';
+import './style.css';
 import QuizComponent from '../../components/question-component';
 
 const TakeQuiz = () => {
@@ -59,13 +58,7 @@ const TakeQuiz = () => {
   const [answer, setAnswer] = useState('');
   const [selectedRadio, setSelectedRadio] = useState('');
 
-<<<<<<< HEAD
-  const { data: questions, isFetching, error } = useGetQuestionsQuery();
-
-  const handleRadioClick = (value) => {
-=======
   const handleRadioClick = value => {
->>>>>>> parent of 9989181 (added loader and error component)
     setAnswer(value);
     setSelectedRadio(value);
   };
@@ -79,7 +72,7 @@ const TakeQuiz = () => {
     setShowBadge(false);
   };
 
-  const handleAnswerOptionClick = () => {
+  const handleAnswerOptionClick = answer => {
     if (answer === questions[currentQuestion].correctAnswer) {
       setShowBadge(true);
       return;
@@ -96,6 +89,7 @@ const TakeQuiz = () => {
       setCompleted(true);
     }
   };
+
   return (
     <>
       {showBadge && <BadgeComponent handleNextQuestion={handleNextQuestion} />}
@@ -108,7 +102,6 @@ const TakeQuiz = () => {
           answer={answer}
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRadioClick={handleRadioClick}
-          handleNextQuestion={handleAnswerOptionClick}
         />
       )}
     </>

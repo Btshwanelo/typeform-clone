@@ -28,7 +28,7 @@ export const validateForm = (values) => {
   return errors;
 };
 
-export const submitForm = (values, navigate, addQuestion, setSubmitted) => {
+export const submitForm = (values, navigate, addQuestion) => {
   const formData = {
     questionText: values.questionText,
     options: [
@@ -40,8 +40,5 @@ export const submitForm = (values, navigate, addQuestion, setSubmitted) => {
     correctAnswer: values.correctAnswer,
   };
   addQuestion(formData);
-  setSubmitted(true);
-  setTimeout(() => {
-    navigate('/');
-  }, 3000);
+  navigate('/');
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,6 @@ import { useAddQuestionMutation } from '../../redux/services/quizCore';
 const AddQuestion = () => {
   const navigate = useNavigate();
   const [addQuestion] = useAddQuestionMutation();
-  const [submitted, setSubmitted] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -22,6 +21,7 @@ const AddQuestion = () => {
       answer4: '',
       correctAnswer: '',
     },
+<<<<<<< HEAD
     validate: (values) => validateForm(values),
     onSubmit: (values) => submitForm(values, navigate, addQuestion, setSubmitted),
   });
@@ -34,6 +34,11 @@ const AddQuestion = () => {
     );
   }
 
+=======
+    validate: values => validateForm(values),
+    onSubmit: values => submitForm(values, navigate, addQuestion),
+  });
+>>>>>>> parent of 9989181 (added loader and error component)
   return (
     <div className='form-container'>
       <form onSubmit={formik.handleSubmit}>
