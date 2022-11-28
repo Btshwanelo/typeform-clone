@@ -5,9 +5,12 @@ export const quizCoreApi = createApi({
   baseQuery: fetchBaseQuery({
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     baseUrl: 'http://localhost:8080/endpoint/',
     prepareHeaders: (headers) => {
 =======
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
 =======
 >>>>>>> parent of 9989181 (added loader and error component)
     baseUrl: 'http://localhost:8080/api',
@@ -22,6 +25,7 @@ export const quizCoreApi = createApi({
   }),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   endpoints: (builder) => ({
     getQuestions: builder.query({ query: () => '/' }),
     addQuestion: builder.mutation({
@@ -30,6 +34,12 @@ export const quizCoreApi = createApi({
         method: 'POST',
         body: question,
       }),
+=======
+  endpoints: builder => ({
+    getQuestions: builder.query({ query: () => '/forms' }),
+    addQuestion: builder.mutation({
+      query: question => ({ url: '/forms', method: 'POST', body: question }),
+>>>>>>> parent of 9989181 (added loader and error component)
 =======
   endpoints: builder => ({
     getQuestions: builder.query({ query: () => '/forms' }),

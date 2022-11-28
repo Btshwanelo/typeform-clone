@@ -61,10 +61,13 @@ const TakeQuiz = () => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   const { data: questions, isFetching, error } = useGetQuestionsQuery();
 
   const handleRadioClick = (value) => {
 =======
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
 =======
 >>>>>>> parent of 9989181 (added loader and error component)
   const handleRadioClick = value => {
