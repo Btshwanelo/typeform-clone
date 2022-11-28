@@ -2,25 +2,23 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import './style.css';
 
-const QuizComponent = props => {
-  const {
-    currentQuestion,
-    questions,
-    selectedRadio,
-    answer,
-    handleAnswerOptionClick,
-    handleRadioClick,
-    handleNextQuestion,
-  } = props;
-
-  const startingMinutes = 2;
-  const startingSeconds = 0;
-
+const QuizComponent = ({
+  currentQuestion,
+  questions,
+  selectedRadio,
+  answer,
+  handleAnswerOptionClick,
+  handleRadioClick,
+  handleNextQuestion,
+  startingMinutes,
+  startingSeconds,
+}) => {
   const [seconds, setSeconds] = useState(startingSeconds);
   const [minutes, setMinutes] = useState(startingMinutes);
   const timer = useRef();
-  
+
   useEffect(() => {
+    // run count-down timer every second
     timer.current = setInterval(() => {
       setSeconds(seconds - 1);
       if (minutes === 0 && seconds === 0) {

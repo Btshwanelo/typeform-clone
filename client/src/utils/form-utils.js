@@ -1,6 +1,7 @@
 export const validateForm = values => {
   const errors = {};
 
+  // form values validation
   if (!values.questionText) {
     errors.questionText = '*Required';
   }
@@ -29,6 +30,7 @@ export const validateForm = values => {
 };
 
 export const submitForm = (values, navigate, addQuestion, setSubmitted) => {
+  //create submision object structure
   const formData = {
     questionText: values.questionText,
     options: [
@@ -39,8 +41,12 @@ export const submitForm = (values, navigate, addQuestion, setSubmitted) => {
     ],
     correctAnswer: values.correctAnswer,
   };
+
+  // add data to backend
   addQuestion(formData);
   setSubmitted(true);
+
+  // navigate to home after 3 seconds
   setTimeout(() => {
     navigate('/');
   }, 3000);

@@ -1,22 +1,4 @@
-.btn {
-  position: relative;
-  font-family: inherit;
-  line-height: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-  outline: none;
-  border: 1px solid transparent;
-  margin: 30px;
-  box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
-  padding: 20px 30px;
-  background-color: rgb(75, 185, 183);
-  color: rgb(1, 4, 4);
-  border-radius: 4px;
-  text-decoration: none;
-  margin-top: 20px;
-  width: fit-content;
-  letter-spacing: 3px;
-  font-size: 22px;
+.quiz-container {
+  width: 100vh;
+  height: 100vh;
 }

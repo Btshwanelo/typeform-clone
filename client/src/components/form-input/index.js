@@ -2,18 +2,16 @@ import React from 'react';
 
 import './style.css';
 
-const FormInput = props => {
-  const {
-    value,
-    name,
-    error,
-    touched,
-    handleBlur,
-    handleChange,
-    type,
-    placeholder,
-  } = props;
-
+const FormInput = ({
+  value,
+  name,
+  error,
+  touched,
+  handleBlur,
+  handleChange,
+  type,
+  placeholder,
+}) => {
   return (
     <>
       {error && touched && <div className='error'>{error}</div>}

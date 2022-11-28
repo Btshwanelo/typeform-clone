@@ -33,7 +33,7 @@ const AddQuestion = () => {
     <div className='form-container'>
       <form onSubmit={formik.handleSubmit}>
         <h2>
-          <span>&#8594; </span>Add a question
+          <span>&#8594; </span>Question
         </h2>
         <FormInput
           value={formik.values.questionText}
@@ -98,28 +98,28 @@ const AddQuestion = () => {
           <FomrRadio
             type={'radio'}
             name={'correctAnswer'}
-            value={'answer1'}
+            value={formik.values.answer1}
             onChange={formik.handleChange}
             descp={'1'}
           />
           <FomrRadio
             type={'radio'}
             name={'correctAnswer'}
-            value={'answer2'}
+            value={formik.values.answer2}
             onChange={formik.handleChange}
             descp={'2'}
           />
           <FomrRadio
             type={'radio'}
             name={'correctAnswer'}
-            value={'answer3'}
+            value={formik.values.answer3}
             onChange={formik.handleChange}
             descp={'3'}
           />
           <FomrRadio
             type={'radio'}
             name={'correctAnswer'}
-            value={'answer4'}
+            value={formik.values.answer4}
             onChange={formik.handleChange}
             descp={'4'}
           />

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './style.css';
-import EndQuiz from '../../components/quiz-end-component';
-import BadgeComponent from '../../components/badge-component';
 import QuizComponent from '../../components/question-component';
 import { useGetQuestionsQuery } from '../../redux/services/quizCore';
 import AppStatus from '../../components/app-status';
-import { useNavigate } from 'react-router-dom';
 
 const TakeQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -18,7 +16,7 @@ const TakeQuiz = () => {
 
   const navigate = useNavigate();
 
-  // handle radio button selection
+  // handle radio button selection"
   const handleRadioClick = value => {
     setAnswer(value);
     setSelectedRadio(value);
@@ -62,7 +60,7 @@ const TakeQuiz = () => {
       <AppStatus statusMessage={'Something went wrong, please try again.'} />
     );
 
-  // if there are no questions
+  // if there are no questions to show
   if (questions.length === 0)
     return (
       <AppStatus
@@ -78,10 +76,25 @@ const TakeQuiz = () => {
         </button>
       </AppStatus>
     );
+
   return (
-    <>
-      {showBadge && <BadgeComponent handleNextQuestion={handleNextQuestion} />}
-      {completed && <EndQuiz />}
+    <div className='quiz-container'>
+      {showBadge && (
+        <AppStatus statusMessage={'Congratulations you have unlocked a badge'}>
+          <img
+            src='/golden-badge.png'
+            alt='badge'
+            width='150px'
+            height='150px'
+          />
+          <button onClick={() => handleNextQuestion()}>Next</button>
+        </AppStatus>
+      )}
+      {completed && (
+        <AppStatus statusMessage={'You have finished the quiz, Thank you'}>
+          <button onClick={() => navigate('/')}>Home</button>
+        </AppStatus>
+      )}
       {!showBadge && !completed && (
         <QuizComponent
           currentQuestion={currentQuestion}
@@ -91,9 +104,11 @@ const TakeQuiz = () => {
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRadioClick={handleRadioClick}
           handleNextQuestion={handleAnswerOptionClick}
+          startingMinutes={2}
+          startingSeconds={30}
         />
       )}
-    </>
+    </div>
   );
 };
 

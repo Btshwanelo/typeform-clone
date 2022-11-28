@@ -16,6 +16,36 @@ code {
     monospace;
 }
 
+h2 {
+  display: flex;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 28px;
+  color: rgb(33, 34, 16);
+}
+
+button {
+  position: relative;
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 10px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+  padding: 20px 30px;
+  background-color: rgb(75, 185, 183);
+  color: rgb(1, 4, 4);
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  font-size: 22px;
+}
+
 .slide-in-bottom{animation:slide-in-bottom .5s cubic-bezier(.25,.46,.45,.94) both}
 
  @keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
