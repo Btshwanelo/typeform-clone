@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { countDownTimer } from '../../utils';
 
 import './style.css';
 
@@ -21,6 +20,55 @@ const QuizComponent = props => {
   const [minutes, setMinutes] = useState(startingMinutes);
   const timer = useRef();
   useEffect(() => {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    timer.current = setInterval(() => {
+      setSeconds(seconds - 1);
+      if (minutes === 0 && seconds === 0) {
+        setSeconds(startingSeconds);
+        setMinutes(startingMinutes);
+        handleNextQuestion();
+      }
+  
+=======
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
+    timer.current = setInterval(() => {
+      setSeconds(seconds - 1);
+      if (minutes === 0 && seconds === 0) {
+        setSeconds(startingMinutes);
+        setMinutes(startingMinutes);
+        handleNextQuestion();
+      }
+
+<<<<<<< HEAD
+>>>>>>> parent of 9989181 (added loader and error component)
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
+      if (minutes > 0 && seconds === 0) {
+        setMinutes(minutes - 1);
+        setSeconds(59);
+      }
+<<<<<<< HEAD
+<<<<<<< HEAD
+  
+=======
+
+>>>>>>> parent of 9989181 (added loader and error component)
+=======
+
+>>>>>>> parent of 9989181 (added loader and error component)
+      if (minutes === 0 && seconds === 1) {
+        setMinutes(0);
+        setSeconds(0);
+      }
+    }, 1000);
+    return () => clearInterval(timer.current);
+<<<<<<< HEAD
+<<<<<<< HEAD
+  }, []);
+=======
     countDownTimer(
       startingSeconds,
       startingMinutes,
@@ -31,7 +79,12 @@ const QuizComponent = props => {
       setMinutes,
       handleNextQuestion,
     );
-  })
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
+=======
+>>>>>>> parent of 9989181 (added loader and error component)
+  });
+>>>>>>> parent of ab5ef1b (updated readme file)
 
   return (
     <div className='quiz-container slide-in-bottom'>
@@ -43,7 +96,7 @@ const QuizComponent = props => {
         <div className='question-wrapper'>
           {questions[currentQuestion].options.map((option, i) => (
             <div
-              key={option._id}
+              key={i}
               className={`btn-answer ${
                 selectedRadio === option.answer && 'btn-answer-active'
               }`}

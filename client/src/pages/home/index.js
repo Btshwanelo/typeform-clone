@@ -5,12 +5,8 @@ import './style.css';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 const Home = (props) => {
   const { descriptionText, welcomeText } = props;
-=======
-const Home = ({ minutes, seconds }) => {
->>>>>>> parent of 9989181 (added loader and error component)
 =======
 const Home = ({ minutes, seconds }) => {
 >>>>>>> parent of 9989181 (added loader and error component)
