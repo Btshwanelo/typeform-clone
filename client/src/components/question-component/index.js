@@ -21,6 +21,7 @@ const QuizComponent = props => {
   const [minutes, setMinutes] = useState(startingMinutes);
   const timer = useRef();
   useEffect(() => {
+<<<<<<< HEAD
     timer.current = setInterval(() => {
       setSeconds(seconds - 1);
       if (minutes === 0 && seconds === 0) {
@@ -41,6 +42,19 @@ const QuizComponent = props => {
     }, 1000);
     return () => clearInterval(timer.current);
   }, []);
+=======
+    countDownTimer(
+      startingSeconds,
+      startingMinutes,
+      timer,
+      seconds,
+      minutes,
+      setSeconds,
+      setMinutes,
+      handleNextQuestion,
+    );
+  });
+>>>>>>> parent of ab5ef1b (updated readme file)
 
   return (
     <div className='quiz-container slide-in-bottom'>
