@@ -1,4 +1,4 @@
-export const validateForm = (values) => {
+export const validateForm = values => {
   const errors = {};
 
   if (!values.questionText) {

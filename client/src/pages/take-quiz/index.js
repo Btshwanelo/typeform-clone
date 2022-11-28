@@ -17,7 +17,7 @@ const TakeQuiz = () => {
 
   const { data: questions, isFetching, error } = useGetQuestionsQuery();
 
-  const handleRadioClick = (value) => {
+  const handleRadioClick = value => {
     setAnswer(value);
     setSelectedRadio(value);
   };
@@ -31,7 +31,7 @@ const TakeQuiz = () => {
     setShowBadge(false);
   };
 
-  const handleAnswerOptionClick = () => {
+  const handleAnswerOptionClick = answer => {
     if (answer === questions[currentQuestion].correctAnswer) {
       setShowBadge(true);
       return;
