@@ -22,16 +22,18 @@ const AddQuestion = () => {
       answer4: '',
       correctAnswer: '',
     },
-    validate: values => validateForm(values),
-    onSubmit: values => submitForm(values, navigate, addQuestion, setSubmitted),
+    validate: (values) => validateForm(values),
+    onSubmit: (values) => submitForm(values, navigate, addQuestion, setSubmitted),
   });
 
-  if (submitted)
+  if (submitted) {
     return (
       <div>
         <h2>Submitted...</h2>
       </div>
     );
+  }
+
   return (
     <div className='form-container'>
       <form onSubmit={formik.handleSubmit}>
@@ -40,9 +42,9 @@ const AddQuestion = () => {
         </h2>
         <FormInput
           value={formik.values.questionText}
-          type={'text'}
-          placeholder={'Type your question here...'}
-          name={'questionText'}
+          type='text'
+          placeholder='Type your question here...'
+          name='questionText'
           error={formik.errors.questionText}
           touched={formik.touched.questionText}
           handleBlur={formik.handleBlur}
@@ -53,9 +55,9 @@ const AddQuestion = () => {
         </h2>
         <FormInput
           value={formik.values.answer1}
-          type={'text'}
-          placeholder={'type option 1'}
-          name={'answer1'}
+          type='text'
+          placeholder='type option 1'
+          name='answer1'
           error={formik.errors.answer1}
           touched={formik.touched.answer1}
           handleBlur={formik.handleBlur}
@@ -63,9 +65,9 @@ const AddQuestion = () => {
         />
         <FormInput
           value={formik.values.answer2}
-          type={'text'}
-          placeholder={'type option 2'}
-          name={'answer2'}
+          type='text'
+          placeholder='type option 2'
+          name='answer2'
           error={formik.errors.answer2}
           touched={formik.touched.answer2}
           handleBlur={formik.handleBlur}
@@ -73,9 +75,9 @@ const AddQuestion = () => {
         />
         <FormInput
           value={formik.values.answer3}
-          type={'text'}
-          placeholder={'type option 3'}
-          name={'answer3'}
+          type='text'
+          placeholder='type option 3'
+          name='answer3'
           error={formik.errors.answer3}
           touched={formik.touched.answer3}
           handleBlur={formik.handleBlur}
@@ -83,9 +85,9 @@ const AddQuestion = () => {
         />
         <FormInput
           value={formik.values.answer4}
-          type={'text'}
-          placeholder={'type option 4'}
-          name={'answer4'}
+          type='text'
+          placeholder='type option 4'
+          name='answer4'
           error={formik.errors.answer4}
           touched={formik.touched.answer4}
           handleBlur={formik.handleBlur}
@@ -99,32 +101,32 @@ const AddQuestion = () => {
         )}
         <div className='answr-containter'>
           <FomrRadio
-            type={'radio'}
-            name={'correctAnswer'}
-            value={'answer1'}
+            type='radio'
+            name='correctAnswer'
+            value='answer1'
             onChange={formik.handleChange}
-            descp={'1'}
+            descp='1'
           />
           <FomrRadio
-            type={'radio'}
-            name={'correctAnswer'}
-            value={'answer2'}
+            type='radio'
+            name='correctAnswer'
+            value='answer2'
             onChange={formik.handleChange}
-            descp={'2'}
+            descp='2'
           />
           <FomrRadio
-            type={'radio'}
-            name={'correctAnswer'}
-            value={'answer3'}
+            type='radio'
+            name='correctAnswer'
+            value='answer3'
             onChange={formik.handleChange}
-            descp={'3'}
+            descp='3'
           />
           <FomrRadio
-            type={'radio'}
-            name={'correctAnswer'}
-            value={'answer4'}
+            type='radio'
+            name='correctAnswer'
+            value='answer4'
             onChange={formik.handleChange}
-            descp={'4'}
+            descp='4'
           />
         </div>
         <button type='submit'>Submit</button>

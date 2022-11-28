@@ -6,6 +6,5 @@ export const store = configureStore({
   reducer: {
     [quizCoreApi.reducerPath]: quizCoreApi.reducer,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(quizCoreApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(quizCoreApi.middleware),
 });
