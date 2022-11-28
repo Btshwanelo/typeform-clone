@@ -32,10 +32,10 @@ export const submitForm = (values, navigate, addQuestion) => {
   const formData = {
     questionText: values.questionText,
     options: [
-      { answer1: values.answer1 },
-      { answer2: values.answer2 },
-      { answer3: values.answer3 },
-      { answer3: values.answer4 },
+      { answer: values.answer1 },
+      { answer: values.answer2 },
+      { answer: values.answer3 },
+      { answer: values.answer4 },
     ],
     correctAnswer: values.correctAnswer,
   };

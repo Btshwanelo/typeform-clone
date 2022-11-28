@@ -1,7 +1,8 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import AddQuestion from './pages/add-question';
 import Home from './pages/home';
-import { Routes, Route } from 'react-router-dom';
 import TakeQuiz from './pages/take-quiz';
 
 function App() {
@@ -10,10 +11,7 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={
-            <Home
-            />
-          }
+          element={<Home />}
         />
         <Route
           path='/add-question'
