@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { countDownTimer } from '../../utils';
 
 import './style.css';
 
@@ -20,25 +21,16 @@ const QuizComponent = props => {
   const [minutes, setMinutes] = useState(startingMinutes);
   const timer = useRef();
   useEffect(() => {
-    timer.current = setInterval(() => {
-      setSeconds(seconds - 1);
-      if (minutes === 0 && seconds === 0) {
-        setSeconds(startingMinutes);
-        setMinutes(startingMinutes);
-        handleNextQuestion();
-      }
-
-      if (minutes > 0 && seconds === 0) {
-        setMinutes(minutes - 1);
-        setSeconds(59);
-      }
-
-      if (minutes === 0 && seconds === 1) {
-        setMinutes(0);
-        setSeconds(0);
-      }
-    }, 1000);
-    return () => clearInterval(timer.current);
+    countDownTimer(
+      startingSeconds,
+      startingMinutes,
+      timer,
+      seconds,
+      minutes,
+      setSeconds,
+      setMinutes,
+      handleNextQuestion,
+    );
   });
 
   return (
@@ -51,7 +43,7 @@ const QuizComponent = props => {
         <div className='question-wrapper'>
           {questions[currentQuestion].options.map((option, i) => (
             <div
-              key={i}
+              key={option._id}
               className={`btn-answer ${
                 selectedRadio === option.answer && 'btn-answer-active'
               }`}
