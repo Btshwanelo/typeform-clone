@@ -24,7 +24,7 @@ const TakeQuiz = () => {
 
   // handle next question
   const handleNextQuestion = () => {
-    if (currentQuestion + 1 >= questions.length) {
+    if (currentQuestion + 1 >= questions.count) {
       setCompleted(true);
     }
     setAnswer('');
@@ -34,13 +34,13 @@ const TakeQuiz = () => {
 
   // handle answer
   const handleAnswerOptionClick = answer => {
-    if (answer === questions[currentQuestion].correctAnswer) {
+    if (answer === questions.questions[currentQuestion].correctAnswer) {
       setShowBadge(true);
       return;
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < questions.count) {
       setAnswer('');
       setCurrentQuestion(nextQuestion);
       setShowBadge(false);
@@ -60,8 +60,9 @@ const TakeQuiz = () => {
       <AppStatus statusMessage={'Something went wrong, please try again.'} />
     );
 
+
   // if there are no questions to show
-  if (questions.length === 0)
+  if (questions.questions.length === 0)
     return (
       <AppStatus
         statusMessage={
@@ -98,14 +99,14 @@ const TakeQuiz = () => {
       {!showBadge && !completed && (
         <QuizComponent
           currentQuestion={currentQuestion}
-          questions={questions}
+          questions={questions.questions}
           selectedRadio={selectedRadio}
           answer={answer}
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRadioClick={handleRadioClick}
           handleNextQuestion={handleAnswerOptionClick}
-          startingMinutes={2}
-          startingSeconds={30}
+          startingMinutes={0}
+          startingSeconds={50}
         />
       )}
     </div>

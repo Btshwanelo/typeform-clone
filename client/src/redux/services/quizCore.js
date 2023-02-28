@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const quizCoreApi = createApi({
   reducerPath: 'quizCoreApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/endpoint/',
+    baseUrl: 'http://localhost:5000/api/v1/',
     prepareHeaders: headers => {
       headers.set(
         'X-RapidAPI-Key',
@@ -16,7 +16,7 @@ export const quizCoreApi = createApi({
     getQuestions: builder.query({ query: () => '/' }),
     addQuestion: builder.mutation({
       query: question => ({
-        url: '/create-question',
+        url: '/',
         method: 'POST',
         body: question,
       }),

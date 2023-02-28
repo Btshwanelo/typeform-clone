@@ -50,7 +50,7 @@ const QuizComponent = ({
         <div className='question-wrapper'>
           {questions[currentQuestion].options.map((option, i) => (
             <div
-              key={option._id}
+              key={i}
               className={`btn-answer ${
                 selectedRadio === option.answer && 'btn-answer-active'
               }`}
