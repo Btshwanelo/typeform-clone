@@ -35,11 +35,6 @@ go to root directory
 
 Running App from root directory
 -npm run dev
+ This will run server and client concurrently
 
-You will notice that server will be running on port 8080
-
-['server] Port connected to: 8080
-['server] Database connected
-
-
-- should be able to add questions and answer the quiz
+You will notice that server will be running on port 8080 and client on port 3000
